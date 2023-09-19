@@ -10,16 +10,18 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { AuthContextProvider } from './Features/Auth/AuthContext'
 import { HelmetProvider } from 'react-helmet-async'
 import { ToastContainer } from 'react-toastify'
+import Layout from './Components/Layout'
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
-      <Route path='/' element={<LandingPage />} />
-      <Route path='/login' element={<Login />} />
-      <Route path='/register' element={<Register />} />
-      <Route path='/dashboard' element={<Dashboard />} />
-      <Route path='*' element={<ErrorPage />} />
+      <Route path='/' element={<Layout />}>
+        <Route path='login' element={<Login />} />
+        <Route path='register' element={<Register />} />
+        <Route path='dashboard' element={<Dashboard />} />
+        <Route path='*' element={<ErrorPage />} />
+        </Route>
     </Route>
   )
 )
