@@ -6,6 +6,9 @@ import Login from './Features/Auth/Login'
 import Register from './Features/Auth/Register'
 import ErrorPage from './Pages/ErrorPage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import { AuthContextProvider } from './Features/Auth/AuthContext'
+import { HelmetProvider } from 'react-helmet-async'
 
 
 const router = createBrowserRouter(
@@ -32,7 +35,13 @@ const queryClient = new QueryClient({
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+      <ReactQueryDevtools />
+      <AuthContextProvider>
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
+      </AuthContextProvider>
+        
     </QueryClientProvider>
   )
 }
