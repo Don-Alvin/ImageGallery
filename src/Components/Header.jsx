@@ -31,7 +31,7 @@ const Header = () => {
                 />
             </div>
             {showMenu && createPortal(
-              <MenuPortal onClick={setShowMenu} openAuth={setShowAuth}  />, document.body
+              <MenuPortal onClick={setShowMenu}  />, document.body
             )}
         </nav>
     </header>
