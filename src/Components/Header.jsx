@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { HiMenuAlt4, HiSearch } from 'react-icons/hi'
 import MenuPortal from './MenuPortal'
 import { createPortal } from 'react-dom'
-import AuthModal from './AuthModal'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
