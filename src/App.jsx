@@ -5,6 +5,7 @@ import LandingPage from './Pages/LandingPage'
 import Login from './Features/Auth/Login'
 import Register from './Features/Auth/Register'
 import ErrorPage from './Pages/ErrorPage'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 
 const router = createBrowserRouter(
@@ -19,11 +20,20 @@ const router = createBrowserRouter(
   )
 )
 
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 0
+    }
+  }
+})
+
 const App = () => {
   return (
-    <>
+    <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
-    </>
+    </QueryClientProvider>
   )
 }
 
