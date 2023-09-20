@@ -32,7 +32,7 @@ const Header = () => {
   };
 
   return (
-    <header className='p-2 md:px-10 lg:px-24 md:py-4 shadow fixed z-10 top-0 w-full bg-white'>
+    <header className='p-2 md:px-10 lg:px-24 md:py-4 shadow sticky z-10 top-0 w-full bg-white'>
         <nav className='flex justify-between items-center'>
             <span className='font-bold text-xl'>
                 ImGa

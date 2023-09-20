@@ -1,8 +1,13 @@
 import React from 'react'
+import DashHeader from '../Components/DashHeader'
+import DashBody from '../Components/DashBody'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <main>
+      <DashHeader />
+      <DashBody />
+    </main>
   )
 }
 
