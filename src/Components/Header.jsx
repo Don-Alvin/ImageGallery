@@ -1,13 +1,13 @@
 import { useState } from 'react'
-import { HiMenuAlt4, HiSearch } from 'react-icons/hi'
+import { HiMenuAlt4 } from 'react-icons/hi'
 import MenuPortal from './MenuPortal'
 import { createPortal } from 'react-dom'
-import useAuth from '../Features/Auth/useAuth'
-import { signOut } from 'firebase/auth'
-import { doc, updateDoc } from 'firebase/firestore'
-import { auth, db } from '../apis/firebase'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import { doc, updateDoc } from 'firebase/firestore'
+import useAuth from '../Features/Auth/useAuth'
+import { signOut } from 'firebase/auth'
+import { auth, db } from '../apis/firebase'
 
 const Header = () => {
   const [showMenu, setShowMenu] = useState(false)
@@ -37,20 +37,6 @@ const Header = () => {
             <span className='font-bold text-xl'>
                 ImGa
             </span>
-            {user && (
-            <div className="border">
-              <form className='ml-2 border flex items-center gap-1'>
-                <HiSearch
-                  className='text-gray-700'
-                />
-                <input 
-                  type='search' 
-                  placeholder='Search for an image' 
-                  className='outline-none placeholder:text-sm'
-                />
-              </form>
-            </div>
-            )}
             <div className='lg:hidden'>
                 <HiMenuAlt4 
                   className='rounded p-1 text-2xl bg-black text-white'
@@ -60,6 +46,7 @@ const Header = () => {
             {user ? (
               <div className='hidden lg:flex items-center gap-2'>
                 <span className='font-semibold text-xl'>Welcome {user.displayName}</span>
+                <Link to='/dashboard' className='text-white bg-black px-2 py-1 rounded'>My Images</Link>
                 <button className='text-white bg-black px-2 py-1 rounded' onClick={handleLogout}>Log out</button>
               </div>
             ):(

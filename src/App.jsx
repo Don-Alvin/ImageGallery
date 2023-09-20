@@ -13,6 +13,8 @@ import Register from './Features/Auth/Register'
 import ErrorPage from './Pages/ErrorPage'
 import { AuthContextProvider } from './Features/Auth/AuthContext'
 import AddNewImageForm from './Features/Images/AddNewImageForm';
+import { SearchContextProvider } from './Features/Images/SearchContext';
+import RequireAuth from './Features/Auth/RequireAuth';
 
 
 const router = createBrowserRouter(
@@ -22,7 +24,9 @@ const router = createBrowserRouter(
         <Route index element={<LandingPage />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
-        <Route path='dashboard' element={<Dashboard />} />
+        <Route element={<RequireAuth />}>
+          <Route path='dashboard' element={<Dashboard />} />
+        </Route>
         <Route path='*' element={<ErrorPage />} />
       </Route>
     </Route>
@@ -43,9 +47,11 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools />
       <AuthContextProvider>
-        <HelmetProvider>
-          <RouterProvider router={router} />
-        </HelmetProvider>
+        <SearchContextProvider>
+          <HelmetProvider>
+            <RouterProvider router={router} />
+          </HelmetProvider>
+        </SearchContextProvider>
       </AuthContextProvider>
       <ToastContainer
           position="top-center"
