@@ -12,14 +12,8 @@ import { loginSchema } from "./Schemas"
 
 
 const Login = () => {
-
-  const [passwordVisible, setPasswordVisible] = useState(false)
   const navigate = useNavigate()
   const provider = new GoogleAuthProvider()
-
-  const handlePassword = () => {
-    setPasswordVisible(!passwordVisible)
-  }
 
   const onSubmit = async () => {
     try {
@@ -91,7 +85,7 @@ const Login = () => {
               <label className="sr-only text-gray-700 text-xl">Password</label>
               <input
                 className={`p-2 border border-gray-800 rounded-lg ${errors.password && touched.password ? `outline outline-1 outline-red-700` : `outline-black`}`}
-                type={!passwordVisible ? 'password' : 'text'}
+                type='password'
                 id="password"
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -99,8 +93,6 @@ const Login = () => {
                 placeholder='Enter your password'
               />
               {errors.password && touched.password && <p className='text-red-700'>{errors.password}</p>}
-              {passwordVisible && <AiOutlineEyeInvisible  className={`absolute ${errors.password && touched.password && `top-[18%]`} top-[33%] right-3`} onClick={handlePassword}/>}
-              {!passwordVisible && <AiOutlineEye  className={`absolute ${errors.password && touched.password && `top-[18%]`} top-[33%] right-3`} onClick={handlePassword}/>}
             </div>
             <button type='submit' disabled={isSubmitting} className='bg-black rounded-lg p-3 text-white font-semibold w-[100%]'>Log in</button>
           </div>

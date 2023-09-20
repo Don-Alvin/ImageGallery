@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"
 import { FcGoogle } from 'react-icons/fc'
@@ -12,15 +11,8 @@ import { registerSchema } from "./Schemas";
 
 
 const Register = () => {
-
-  const [passwordVisible, setPasswordVisible] = useState(false)
-
   const navigate = useNavigate()
   const provider = new GoogleAuthProvider()
-
-  const handlePassword = () => {
-    setPasswordVisible(!passwordVisible)
-  }
 
   const onSubmit = async() => {
     try {
@@ -120,7 +112,7 @@ const Register = () => {
                     <label className="text-gray-700 text-md">Password</label>
                     <input
                       className={`p-2 border border-gray-800 rounded-lg ${errors.password && touched.password ? `outline outline-1 outline-red-700` : `outline-black`}`}
-                      type={!passwordVisible ? 'password' : 'text'}
+                      type='password'
                       id="password"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -128,8 +120,6 @@ const Register = () => {
                       placeholder='Enter your password'
                       autoComplete="off"
                     />
-                    {passwordVisible && <AiOutlineEyeInvisible  className={`absolute ${errors.password && touched.password && `top-[41%]`} top-[62%] right-3`} onClick={handlePassword}/>}
-                    {!passwordVisible && <AiOutlineEye  className={`absolute ${errors.password && touched.password && `top-[41%]`} top-[62%] right-3`} onClick={handlePassword}/>}
                     {errors.password && touched.password && <p className='text-red-700'>{errors.password}</p>}
                   </div>
               <button type="submit" disabled={isSubmitting} className='bg-black rounded-lg p-3 text-white font-semibold w-[100%]'>Register</button>

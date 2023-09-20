@@ -39,7 +39,7 @@ const ImageList = () => {
       <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
         <SortableContext items={imagesToShow} strategy={rectSortingStrategy}>
           {filteredImages.map(image => (
-                  <ImageCard src={image.tag} tag={image.tag} id={image.id} />
+                  <ImageCard src={image.src} placeholder={image.placeholder} tag={image.tag} id={image.id} />
               ))}
         </SortableContext>
       </DndContext>
