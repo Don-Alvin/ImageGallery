@@ -56,12 +56,12 @@ const Header = () => {
                 />
             </div>
             {user ? (
-              <div className='flex items-center gap-2'>
+              <div className='hidden lg:flex items-center gap-2'>
                 <span className='font-semibold text-xl'>Welcome {user.displayName}</span>
                 <button className='text-white bg-black px-2 py-1 rounded' onClick={handleLogout}>Log out</button>
               </div>
             ):(
-              <Link className='hidden lg:block text-white bg-black px-2 py-1 rounded'>Log in</Link>
+              <Link to='/login' className='hidden lg:block text-white bg-black px-2 py-1 rounded'>Log in</Link>
             )}
             {showMenu && createPortal(
               <MenuPortal onClick={setShowMenu} handleLogout={handleLogout}  />, document.body
