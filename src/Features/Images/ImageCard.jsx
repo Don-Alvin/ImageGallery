@@ -14,8 +14,7 @@ const ImageCard = ({src, tag, id, placeholder}) => {
           <div className='border p-1 rounded shadow grid gap-2' ref={setNodeRef} {...attributes} {...listeners} key={id} style={style}>
             <LazyLoadImage 
               className='w-[200px] h-[150px] lg:w-[400px] lg:h-[200px] object-cover'
-              placeholderSrc={placeholder}
-              effect='blur' 
+              placeholderSrc={placeholder} 
               src={src} 
               alt={tag} 
             />

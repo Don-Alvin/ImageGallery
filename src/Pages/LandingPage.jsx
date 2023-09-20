@@ -7,8 +7,7 @@ const LandingPage = () => {
       <article className='relative h-screen'>
         <div className='absolute bg-black opacity-50 inset-0'></div>
         <LazyLoadImage 
-          className='h-full object-fit w-full'
-          effect='blur' 
+          className='h-full object-fit w-full' 
           src='/images/image1.jpg' 
           alt='image-1'
         />
