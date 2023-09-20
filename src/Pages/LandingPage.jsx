@@ -1,11 +1,9 @@
 import React from 'react'
-import Header from '../Components/Header'
 import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
   return (
     <section>
-      <Header />
       <article className='relative h-screen'>
         <div className='absolute bg-black opacity-50 inset-0'></div>
         <img className='h-full object-cover w-full' src='/images/image1.jpg' alt='image-1'/>

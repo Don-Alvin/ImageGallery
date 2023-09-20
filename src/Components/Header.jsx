@@ -37,6 +37,7 @@ const Header = () => {
             <span className='font-bold text-xl'>
                 ImGa
             </span>
+            {user && (
             <div className="border">
               <form className='ml-2 border flex items-center gap-1'>
                 <HiSearch
@@ -49,6 +50,7 @@ const Header = () => {
                 />
               </form>
             </div>
+            )}
             <div className='lg:hidden'>
                 <HiMenuAlt4 
                   className='rounded p-1 text-2xl bg-black text-white'

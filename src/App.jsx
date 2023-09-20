@@ -12,6 +12,7 @@ import Login from './Features/Auth/Login'
 import Register from './Features/Auth/Register'
 import ErrorPage from './Pages/ErrorPage'
 import { AuthContextProvider } from './Features/Auth/AuthContext'
+import AddNewImageForm from './Features/Images/AddNewImageForm';
 
 
 const router = createBrowserRouter(
