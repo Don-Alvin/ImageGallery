@@ -6,7 +6,9 @@
 
 ## Authentication
 
-- Simple authentication system with Auth0 where a user can log in with the following details; - email: user@example.com - password: 1Password
+- Simple authentication system with Auth0 where a user can log in with the following details; 
+- - `email: user@example.com` 
+- - `password: 1Password`
 
 ### Image display
 

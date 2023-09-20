@@ -1,16 +1,17 @@
 import React from 'react'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import Layout from './Components/Layout'
 import Dashboard from './Pages/Dashboard'
 import LandingPage from './Pages/LandingPage'
 import Login from './Features/Auth/Login'
 import Register from './Features/Auth/Register'
 import ErrorPage from './Pages/ErrorPage'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { AuthContextProvider } from './Features/Auth/AuthContext'
-import { HelmetProvider } from 'react-helmet-async'
-import { ToastContainer } from 'react-toastify'
-import Layout from './Components/Layout'
 
 
 const router = createBrowserRouter(
@@ -22,7 +23,7 @@ const router = createBrowserRouter(
         <Route path='register' element={<Register />} />
         <Route path='dashboard' element={<Dashboard />} />
         <Route path='*' element={<ErrorPage />} />
-        </Route>
+      </Route>
     </Route>
   )
 )
