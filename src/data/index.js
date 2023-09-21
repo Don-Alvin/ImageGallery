@@ -67,7 +67,7 @@ export default [
 	},
 	{
 		src: "/images/venice5.jpg",
-		placeholder: "/images/venice5-min.jp",
+		placeholder: "/images/venice5-min.jpg",
 		tag: "venice",
 		id: 12,
 	},
