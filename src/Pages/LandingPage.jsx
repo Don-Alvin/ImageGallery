@@ -1,4 +1,3 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { Link } from 'react-router-dom'
 
 const LandingPage = () => {
@@ -6,7 +5,7 @@ const LandingPage = () => {
     <section>
       <article className='relative h-screen'>
         <div className='absolute bg-black opacity-50 inset-0'></div>
-        <LazyLoadImage 
+        <img
           className='h-full object-fit w-full' 
           src='/images/image1.jpg' 
           alt='image-1'

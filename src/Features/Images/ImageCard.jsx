@@ -12,10 +12,10 @@ const ImageCard = ({src, tag, id, placeholder}) => {
   }
   return (
           <div className='border p-1 rounded shadow grid gap-2' ref={setNodeRef} {...attributes} {...listeners} key={id} style={style}>
-            <LazyLoadImage 
+            <img
               className='w-[200px] h-[150px] lg:w-[400px] lg:h-[200px] object-cover'
-              placeholderSrc={placeholder} 
-              src={src} 
+              loading='lazy'
+              src={placeholder} 
               alt={tag} 
             />
             <span className='flex items-center gap-2'>
