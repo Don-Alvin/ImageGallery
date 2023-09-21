@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom'
+import useAuth from '../Features/Auth/useAuth'
 
 const LandingPage = () => {
+  const { user } = useAuth()
   return (
     <section>
       <article className='relative h-screen'>
@@ -12,7 +14,12 @@ const LandingPage = () => {
         />
         <div className='absolute inset-12 flex flex-col items-center justify-center gap-2'>
           <span className='text-white font-bold text-2xl text-center'>Store your memories with ImageGallery</span>
-          <Link to='/register' className='p-2 bg-black text-white rounded text-2xl'>Start now</Link>
+          {user ? (
+            <Link to='/dashboard' className='p-2 bg-black text-white rounded text-2xl'>My Images</Link>
+          ) : (
+            <Link to='/register' className='p-2 bg-black text-white rounded text-2xl'>Start now</Link>
+          )}
+          
         </div>
       </article>
     </section>
